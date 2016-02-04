@@ -1,0 +1,11 @@
+{
+  "name": "seneca-stats",
+  "version": "0.0.1",
+  "description": "A stats plugin for seneca",
+  "main": "seneca-stats.js",
+  "author": "Dean McDonnell (http://mcdonnelldean.me)",
+  "license": "MIT",
+  "dependencies": {
+    "seneca": "1.1.0"
+  }
+}
