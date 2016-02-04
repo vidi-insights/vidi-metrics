@@ -21,15 +21,20 @@ module.exports = function (opts) {
   function handle_payload (msg) {
     if (msg) {
       msg = JSON.parse(msg)
+      seneca.log.debug(JSON.stringify(msg, null, 2))
+
       msg.role = opts.plugin
       msg.cmd = 'map'
 
+      // map data to standard format, this
+      // us usually handled by plugins
       seneca.act(msg, (err, reply) => {
         if (!err) {
-
           reply.role = opts.plugin
           reply.cmd = 'store'
 
+          // Allow stores to save the
+          // standardised stats.
           seneca.act(reply)
         }
       })
