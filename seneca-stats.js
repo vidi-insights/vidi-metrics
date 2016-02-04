@@ -21,7 +21,8 @@ module.exports = function (opts) {
   function handle_payload (msg) {
     if (msg) {
       msg = JSON.parse(msg)
-      seneca.log.debug(JSON.stringify(msg, null, 2))
+
+      console.log(JSON.stringify(msg, null, 2))
 
       msg.role = opts.plugin
       msg.cmd = 'map'
