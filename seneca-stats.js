@@ -5,8 +5,8 @@ var dgram = require('dgram')
 var defaults = {
   plugin: 'stats',
   collector: false,
-  log_payload: false,
-  log_metrics: false,
+  log_input: false,
+  log_output: false,
   udp: {
     host: 'localhost',
     port: 5001
@@ -24,7 +24,7 @@ module.exports = function (opts) {
     if (msg) {
       msg = JSON.parse(msg)
 
-      if (opts.log_payload) {
+      if (opts.log_input) {
         console.log(JSON.stringify(msg, null, 2))
       }
 
@@ -94,11 +94,11 @@ module.exports = function (opts) {
 
   // default handler for storage is to simply throw the messages away.
   seneca.add({role: opts.plugin, cmd: 'store'}, (msg, done) => {
-    if (opts.log_metrics) {
+    if (opts.log_output) {
       console.log(JSON.stringify(msg.metrics, null, 2))
     }
 
-    done()
+    done(null, msg)
   })
 
   return opts.plugin

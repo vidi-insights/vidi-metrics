@@ -6,6 +6,6 @@
   "author": "Dean McDonnell (http://mcdonnelldean.me)",
   "license": "MIT",
   "dependencies": {
-    "seneca": "1.1.0"
+    "seneca": "1.1.0",
   }
 }
