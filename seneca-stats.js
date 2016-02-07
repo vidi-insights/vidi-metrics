@@ -95,7 +95,7 @@ module.exports = function (opts) {
   // default handler for storage is to simply throw the messages away.
   seneca.add({role: opts.plugin, cmd: 'store'}, (msg, done) => {
     if (opts.log_output) {
-      console.log(JSON.stringify(msg.metrics, null, 2))
+      console.log(JSON.stringify(msg.stats, null, 2))
     }
 
     done(null, msg)
