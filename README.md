@@ -6,7 +6,7 @@
 A customisable self hosting metrics pipeline.
 
 - __Work in progress__ This module is currently a work in progress.
- 
+
 ## Install
 
 ```
@@ -22,23 +22,33 @@ npm install vidi-metrics
 {
   // default name when loading the plugin,
   // allows side by side loading if needed
-  plugin: 'vidi',
-  
+  plugin: 'vidi-metrics',
+  role: 'metrics',
+
   // Listen on upd for messages
   collector: false,
-  
+
   // Console.log raw input
   log_input: false,
-  
+
   // Console.log raw output
   log_output: false,
-  
+
   // Configure upd listener
   udp: {
     host: 'localhost',
     port: 5001
   }
 }
+```
+
+## Try it out
+A demo micro-service can be found in `test/demo.js` and ran via npm. It listens on UDP for JSON messages and via Seneca for
+`role:metrics, cmd:write`. If data is provided it will be sent through the pipeline and emitted emitted to console. The demo
+emits input and output. Be sure to run `npm install` before running the demo.
+
+```
+npm run demo
 ```
 
 ## Contributing

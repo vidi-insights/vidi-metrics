@@ -1,10 +1,13 @@
 {
-  "name": "seneca-stats",
+  "name": "vidi-metrics",
   "version": "0.0.1",
-  "description": "A stats plugin for seneca",
-  "main": "seneca-stats.js",
+  "description": "A customisable self hosting metrics pipeline.",
+  "main": "vidi-metrics.js",
   "author": "Dean McDonnell (http://mcdonnelldean.me)",
   "license": "MIT",
+  "scripts": {
+    "demo": "node test/demo.js"
+  },
   "dependencies": {
     "seneca": "1.1.0"
   }
