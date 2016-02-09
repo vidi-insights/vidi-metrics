@@ -18,7 +18,7 @@ npm install vidi-metrics
 - in progress
 
 ## Options
-```
+```js
 {
   // default name when loading the plugin,
   // allows side by side loading if needed
