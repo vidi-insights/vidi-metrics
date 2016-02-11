@@ -1,10 +1,14 @@
 {
   "name": "vidi-metrics",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A customisable self hosting metrics pipeline",
   "main": "vidi-metrics.js",
   "author": "Dean McDonnell (http://mcdonnelldean.me)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vidi-insights/vidi-metrics.git"
+  },
   "scripts": {
     "demo": "node srv/demo.js"
   },
