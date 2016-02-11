@@ -7,8 +7,8 @@
 
 Vidi: Metrics is a customizable metrics pipeline built on top of [Seneca][]. It can be run as a
 plugin for integration with larger Seneca systems or stand-alone as a scriptable, pluggable,
-micro-service. Vidi:Metrics can both collect and emit metrics. Each mode can be enabled
-independently. All transport is via UDP.
+micro-service. Vidi: Metrics can both collect and emit metrics. Each mode can be enabled
+independently or together. All transport is via UDP.
 
 - __Work in progress__ This module is currently a work in progress.
 
@@ -80,6 +80,31 @@ is listed along with it's default value if not set by the user.
   }
 }
 ```
+
+## The pipeline
+Vidi: Metrics has a simple pipeline that can be hooked into at various points.
+
+### {role: 'metrics', hook: 'emit'}
+If in emitter mode, once per interval Vidi: Metrics will call actions matching the
+above pattern. Simply return an array of data points you wish to emit in the provided
+callback.
+
+### {role: 'metrics', hook: 'tag'}
+Allows external data to be correctly tagged for mapping. If data arrives via UPD with no
+source and/or payload the data will be passed to actions matching the above pattern. If
+a match is made the correctly tagged data is returned in the callback, otherwise null is
+returned. Data that cannot be tagged is discarded.
+
+### {role: 'metrics', hook: 'map'}
+Maps data to well defined metrics. These metrics are emitted with at least the fields
+source, and name. Map plugins can emit multiple metrics of varying name and even source.
+
+### {role: 'metrics', hook: 'sink'}
+Sink's capture metrics on an individual basis. Sinks can match on name and source for more
+granularity. Sinks are considered the final point in the pipeline.
+
+__Note:__ Our demo micro-service mentioned above contains commented code demonstrating how to
+hook into the pipeline using the above patterns.
 
 ## Contributing
 The [Vidi: Insights org][Org] encourages __open__ and __safe__ participation.
