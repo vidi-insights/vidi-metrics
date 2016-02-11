@@ -6,7 +6,7 @@
   "author": "Dean McDonnell (http://mcdonnelldean.me)",
   "license": "MIT",
   "scripts": {
-    "demo": "node test/demo.js"
+    "demo": "node srv/demo.js"
   },
   "dependencies": {
     "seneca": "1.1.0"
