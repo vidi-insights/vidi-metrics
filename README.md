@@ -1,3 +1,5 @@
+![Banner][]
+
 # vidi-metrics
 
 - __Lead Maintainer:__ [Dean McDonnell][Lead]
@@ -44,7 +46,7 @@ npm install vidi-metrics
 
 ## Try it out
 A demo micro-service can be found in `test/demo.js` and ran via npm. It listens on UDP for JSON messages and via Seneca for
-`role:metrics, cmd:write`. If data is provided it will be sent through the pipeline and emitted emitted to console. The demo
+`role:metrics, cmd:write`. If data is provided it will be sent through the pipeline and emitted to console. The demo
 emits input and output. Be sure to run `npm install` before running the demo.
 
 ```
@@ -58,8 +60,13 @@ The [Vidi: Insights org][Org] encourages __open__ and __safe__ participation.
 
 If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
 
+## License
+Copyright (c) 2016, Dean McDonnell and other contributors.
+Licensed under [MIT][].
+
+[Banner]: https://github.com/vidi-insights/org/blob/master/assets/vidi-banner.png
+[Lead]: https://github.com/mcdonnelldean
+[Sponsor]: http://www.nearform.com/
 [Org]: https://github.com/vidi-insights
 [CoC]: https://github.com/vidi-insights/org/blob/master/code-of-conduct.md
-
-[Lead]: https://github.com/mcdonnelldean
-[Sponsor]: https://nearform.com
+[MIT]: ./LICENSE
