@@ -45,7 +45,7 @@ module.exports = function (opts) {
       }
 
       map_if_needed(data, (err, data) => {
-        if (!err) {
+        if (!err && data) {
           data.role = opts.role
           data.hook = 'map'
 
